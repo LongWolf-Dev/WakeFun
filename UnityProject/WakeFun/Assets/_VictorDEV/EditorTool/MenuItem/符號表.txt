@@ -1,0 +1,5 @@
+%：表示Ctrl鍵（Windows）或Command鍵（Mac）
+#：表示Shift鍵
+&：表示Alt鍵（Windows）或Option鍵（Mac）
+LEFT/RIGHT/UP/DOWN：表示箭頭鍵
+F1 ~ F12：表示功能鍵
