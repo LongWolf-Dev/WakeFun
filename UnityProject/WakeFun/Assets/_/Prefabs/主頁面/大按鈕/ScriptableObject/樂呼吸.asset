@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9dcf9bd21768e04ba7a96d0b8258242, type: 3}
+  m_Name: "\u6A02\u547C\u5438"
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: f388dbe765dd04b4d938466807453801, type: 3}
+  iconColor: {r: 1, g: 1, b: 1, a: 1}
+  bkgColor: {r: 0.6509804, g: 0.6627451, b: 0.98823535, a: 1}
+  btnLabel: "\u6A02\u547C\u5438"
