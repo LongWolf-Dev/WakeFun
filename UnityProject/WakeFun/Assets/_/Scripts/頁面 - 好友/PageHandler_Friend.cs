@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +12,15 @@ public class PageHandler_Friend : MonoBehaviour
     [SerializeField] private FriendList friendList;
     [Header(">>> 新增好友頁面")]
     [SerializeField] private AddFriendHandler addFriendHandler;
+    [Header(">>> 帳號詳細資訊")]
+    [SerializeField] private AccountDetailPage accountDetailPage;
+
+    private void Awake()
+    {
+        rankingList.OnClickDetail.AddListener(accountDetailPage.SetAccountSoData);
+        friendList.OnClickDetail.AddListener(accountDetailPage.SetAccountSoData);
+        addFriendHandler.OnClickAvatarEvent.AddListener(accountDetailPage.SetAccountSoData);
+    }
 
     private void OnValidate()
     {
@@ -21,5 +28,6 @@ public class PageHandler_Friend : MonoBehaviour
         rankingList ??= transform.Find("排行榜列表").GetComponent<RankingList>();
         friendList ??= transform.Find("好友名單列表").GetComponent<FriendList>();
         addFriendHandler ??= transform.Find("新增好友頁面").GetComponent<AddFriendHandler>();
+        accountDetailPage ??= transform.Find("帳號詳細資訊").GetComponent<AccountDetailPage>();
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class AddFriendHandler : MonoBehaviour
 {
-
     [Header(">>> 搜尋到的用戶資料")]
     [SerializeField] private SO_Account accountSoDataBySearch;
 
@@ -23,6 +22,7 @@ public class AddFriendHandler : MonoBehaviour
 
     [Header(">>> 好友大頭照")]
     [SerializeField] private Image imgAvatar;
+    [SerializeField] private Button btnAvatar;
 
     public SO_Account AccountSoDataBySearch
     {
@@ -39,15 +39,16 @@ public class AddFriendHandler : MonoBehaviour
     public UnityEvent<string, AddFriendHandler> OnSearchIDEvent = new UnityEvent<string, AddFriendHandler>();
     [Header(">>> 當點擊新增好友按鈕時")]
     public UnityEvent<SO_Account> OnAddFriendEvent = new UnityEvent<SO_Account>();
+    [Header(">>> 當點擊大頭照時")]
+    public UnityEvent<SO_Account> OnClickAvatarEvent = new UnityEvent<SO_Account>();
 
     private void Awake()
     {
         txtCantFindAccount.SetActive(false);
-        btnSearch.onClick.AddListener(ToSearchAccount);
+        btnSearch.onClick.AddListener(()=> OnSearchIDEvent.Invoke(inputFieldSearchID.text, this));
+        btnAvatar.onClick.AddListener(() => OnClickAvatarEvent.Invoke(AccountSoDataBySearch)) ;
         btnAddFriend.onClick.AddListener(() => OnAddFriendEvent.Invoke(accountSoDataBySearch));
     }
-
-    public void ToSearchAccount() => OnSearchIDEvent.Invoke(inputFieldSearchID.text, this);
 
     private void Update()
     {

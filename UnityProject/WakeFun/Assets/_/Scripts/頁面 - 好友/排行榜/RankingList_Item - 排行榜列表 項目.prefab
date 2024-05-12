@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u9673\u7F8E\u73B2"
+  m_Text: "\u5289\u7F8E\u9E97"
 --- !u!1 &2519948664281056027
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 2416977229032277927}
   - component: {fileID: 1677604098946422395}
   m_Layer: 5
-  m_Name: "RankingList_Item - \u9673\u7F8E\u73B2"
+  m_Name: "RankingList_Item - \u5289\u7F8E\u9E97"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -489,7 +489,19 @@ MonoBehaviour:
   txtNameTitle: {fileID: 987236034937262877}
   OnClickDetailButton:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnClickAddFriendButton:
     m_PersistentCalls:
       m_Calls: []

@@ -2,28 +2,28 @@ using UnityEngine;
 using VictorDev.EditorTool;
 
 /// <summary>
-/// ½Òµ{¸ê®Æ
+/// èª²ç¨‹è³‡æ–™
 /// </summary>
-[CreateAssetMenu(fileName = "SO_½Òµ{¸ê®Æ", menuName = ">>WakeFun<</ScriptableObject/SO_½Òµ{¸ê®Æ")]
+[CreateAssetMenu(fileName = "SO_èª²ç¨‹è³‡æ–™", menuName = ">>WakeFun<</ScriptableObject/SO_èª²ç¨‹è³‡æ–™")]
 public class SO_Course : ScriptableObject
 {
-    [Header(">>> ½Òµ{¦WºÙ")]
+    [Header(">>> èª²ç¨‹åç¨±")]
     [SerializeField] private string courseTitle;
-    [Header(">>> ¦Ñ®v¦WºÙ")]
+    [Header(">>> è€å¸«åç¨±")]
     [SerializeField] private string teacherName;
-    [Header(">>> ¤é´Á®É¶¡")]
+    [Header(">>> æ—¥æœŸæ™‚é–“")]
     [SerializeField] private string date;
-    [Header(">>> ¤W½Ò¦aÂI")]
+    [Header(">>> ä¸Šèª²åœ°é»ž")]
     [SerializeField] private string location;
-    [Header(">>> ½Òµ{¶O¥Î")]
+    [Header(">>> èª²ç¨‹è²»ç”¨")]
     [SerializeField] private int fee;
 
-    [Header(">>> ½Òµ{»¡©ú ")]
+    [Header(">>> èª²ç¨‹èªªæ˜Ž ")]
     [TextArea(3, 10)]
     [SerializeField] private string description;
-    [Header(">>> §ó¦h¸ê°T")]
+    [Header(">>> æ›´å¤šè³‡è¨Š")]
     [SerializeField] private string moreInfomation;
-    [Header(">>> ®ü³ø")]
+    [Header(">>> æµ·å ±")]
     [SerializeField] private Sprite poster;
 
     private void OnValidate() => SetupRandom();

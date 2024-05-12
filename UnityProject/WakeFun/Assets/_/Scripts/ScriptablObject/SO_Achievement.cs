@@ -1,15 +1,15 @@
 using UnityEngine;
 
 /// <summary>
-/// ¦¨´N¸ê®Æ
+/// æˆå°±è³‡æ–™
 /// </summary>
-[CreateAssetMenu(fileName = "SO_¦¨´N¸ê®Æ", menuName = ">>WakeFun<</ScriptableObject/SO_¦¨´N¸ê®Æ")]
+[CreateAssetMenu(fileName = "SO_æˆå°±è³‡æ–™", menuName = ">>WakeFun<</ScriptableObject/SO_æˆå°±è³‡æ–™")]
 public class SO_Achievement : ScriptableObject
 {
-    [Header(">>> ¦¨´N¼ĞÃD")]
+    [Header(">>> æˆå°±æ¨™é¡Œ")]
     [SerializeField] private string title;
-    [Header(">>> ¦¨´N»¡©ú ")]
+    [Header(">>> æˆå°±èªªæ˜ ")]
     [SerializeField] private string description;
-    [Header(">>> ¬O§_¹F¦¨")]
+    [Header(">>> æ˜¯å¦é”æˆ")]
     [SerializeField] private bool isAchieved;
 }

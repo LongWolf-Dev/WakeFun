@@ -4,31 +4,31 @@ using VictorDev.EditorTool;
 using Random = UnityEngine.Random;
 
 /// <summary>
-/// ±b¸¹¸ê®Æ
+/// å¸³è™Ÿè³‡æ–™
 /// </summary>
-[CreateAssetMenu(fileName = "SO_·|­û±b¸¹", menuName = ">>WakeFun<</ScriptableObject/SO_·|­û±b¸¹")]
+[CreateAssetMenu(fileName = "SO_æœƒå“¡å¸³è™Ÿ", menuName = ">>WakeFun<</ScriptableObject/SO_æœƒå“¡å¸³è™Ÿ")]
 public class SO_Account : ScriptableObject
 {
-    [Header(">>> ªk¸¹")]
+    [Header(">>> æ³•è™Ÿ")]
     [SerializeField] private string titleName;
-    [Header(">>> ©m¦W")]
+    [Header(">>> å§“å")]
     [SerializeField] private string userName;
-    [Header(">>> ¦~ÄÖ")]
+    [Header(">>> å¹´é½¡")]
     [SerializeField] private int age;
-    [Header(">>> ©Ê§O")]
+    [Header(">>> æ€§åˆ¥")]
     [SerializeField] private EnumGender gender;
-    [Header(">>> Ãö©ó§Ú")]
+    [Header(">>> é—œæ–¼æˆ‘")]
     [TextArea(3, 10)]
     [SerializeField] private string aboutMe;
 
-    [Header(">>> ¿ô¼ÖÂI")]
+    [Header(">>> é†’æ¨‚é»ž")]
     [Range(0, 99999)]
     [SerializeField] private int wakeFunPoint;
-    [Header(">>> ÂIÆg¼Æ")]
+    [Header(">>> é»žè®šæ•¸")]
     [Range(0, 99999)]
     [SerializeField] private int numOfLiked;
 
-    [Header(">>> ¤jÀY·Ó")]
+    [Header(">>> å¤§é ­ç…§")]
     [SerializeField] private Sprite avatar;
 
     #region [>>> Getter]
@@ -52,14 +52,14 @@ public class SO_Account : ScriptableObject
         this.numOfLiked = numOfLike;
     }
     /// <summary>
-    /// »s§@¶Ã¼Æ¸ê®Æ (For´ú¸Õ¥Î)
+    /// è£½ä½œäº‚æ•¸è³‡æ–™ (Foræ¸¬è©¦ç”¨)
     /// </summary>
     public void _SetupRandomData()
     {
         if (string.IsNullOrEmpty(userName))
         {
             userName = $"{RandomDataUtils.GetNameByRandom()}";
-            gender = (Random.Range(0, 2) == 0 ? EnumGender.male : EnumGender.female);
+            gender = (Random.Range(0, 2) == 0 ? EnumGender.ç”·å£« : EnumGender.å¥³å£«);
         }
         titleName = $"{userName.Substring(1, 1)}{userName.Substring(1, 1)}";
         if (age == 0) age = Random.Range(26, 90);

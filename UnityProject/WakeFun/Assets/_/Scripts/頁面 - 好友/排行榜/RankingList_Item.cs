@@ -21,9 +21,9 @@ public class RankingList_Item : MonoBehaviour
     /// </summary>
     public UnityEvent<SO_Account> OnClickDetailButton;
     /// <summary>
-    /// 事件：點擊+按鈕
+    /// 事件：點擊新增好友按鈕
     /// </summary>
-    public UnityEvent<SO_Account> OnClickAddFriendButton;
+    public UnityEvent<SO_Account> OnClickAddFriendButton = new UnityEvent<SO_Account>();
 
     public SO_Account AccountSO
     {
@@ -36,10 +36,9 @@ public class RankingList_Item : MonoBehaviour
 
     private void Awake()
     {
-        btnDetail.onClick.AddListener(() => OnClickDetailButton?.Invoke(accountSO));
+        btnDetail.onClick.AddListener(() => OnClickDetailButton.Invoke(accountSO));
         btnAddFriend.onClick.AddListener(() => OnClickAddFriendButton?.Invoke(accountSO));
     }
-
     private void OnValidate()
     {
         btnDetail ??= GetComponent<Button>();
@@ -67,8 +66,6 @@ public class RankingList_Item : MonoBehaviour
             txtName.text = tempData.UserName;
             txtNameTitle.text = tempData.TitleName;
             name = $"{GetType().Name} - {tempData.UserName}";
-
-            Debug.LogWarning($"[Random Data] >>> {name}");
         }
     }
 }
