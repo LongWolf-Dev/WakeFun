@@ -23,7 +23,7 @@ public class RankingList_Item : MonoBehaviour
     /// <summary>
     /// 事件：點擊新增好友按鈕
     /// </summary>
-    public UnityEvent<SO_Account> OnClickAddFriendButton = new UnityEvent<SO_Account>();
+    public UnityEvent<SO_Account> OnClickAddFriendButton;
 
     public SO_Account AccountSO
     {
@@ -66,6 +66,8 @@ public class RankingList_Item : MonoBehaviour
             txtName.text = tempData.UserName;
             txtNameTitle.text = tempData.TitleName;
             name = $"{GetType().Name} - {tempData.UserName}";
+
+            accountSO = tempData;
         }
     }
 }

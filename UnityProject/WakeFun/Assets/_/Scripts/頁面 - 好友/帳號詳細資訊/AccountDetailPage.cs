@@ -44,7 +44,7 @@ public class AccountDetailPage : MonoBehaviour
 
     private void RefreshData()
     {
-        imgAvatar.sprite = accountSoData.Avatar;
+        if (accountSoData.Avatar != null) imgAvatar.sprite = accountSoData.Avatar;
         txtLiked.text = accountSoData.NumOfLiked.ToString();
         txtTitleName.text = accountSoData.TitleName;
         txtUserName.text = accountSoData.UserName;

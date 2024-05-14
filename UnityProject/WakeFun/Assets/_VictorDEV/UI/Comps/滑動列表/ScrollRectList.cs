@@ -14,7 +14,7 @@ public abstract class ScrollRectList<T, SO> : MonoBehaviour where T : Component 
     [SerializeField] private T prefabItem;
 
     [Header(">>> 垂直滑動列表 - 手動設定scrollRect對像")]
-    [SerializeField] private ScrollRect scrollView;
+    [SerializeField] protected ScrollRect scrollView;
 
     /// <summary>
     /// 儲存外部傳來的ScriptateObject資料
