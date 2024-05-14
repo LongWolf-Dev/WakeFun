@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u90ED\u5FD7\u5F37"
+  m_Text: "\u674E\u5EFA\u5B8F"
 --- !u!1 &1331992305050794827
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,7 +507,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5FD7\u5FD7"
+  m_Text: "\u5EFA\u5EFA"
 --- !u!1 &7976273068666966037
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 2191426900908317638}
   - component: {fileID: 1677604098946422395}
   m_Layer: 5
-  m_Name: "FriendList_Item - \u90ED\u5FD7\u5F37"
+  m_Name: "FriendList_Item - \u674E\u5EFA\u5B8F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
