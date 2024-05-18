@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u738B\u6587\u83EF"
+  m_Text: "\u90B1\u5B50\u8C6A"
 --- !u!1 &2519948664281056027
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +427,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6587\u6587"
+  m_Text: "\u5B50\u5B50"
 --- !u!1 &7976273068666966037
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 2416977229032277927}
   - component: {fileID: 1677604098946422395}
   m_Layer: 5
-  m_Name: "RankingList_Item - \u738B\u6587\u83EF"
+  m_Name: "RankingList_Item - \u90B1\u5B50\u8C6A"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

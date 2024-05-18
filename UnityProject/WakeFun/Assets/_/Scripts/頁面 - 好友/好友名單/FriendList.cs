@@ -18,8 +18,5 @@ public class FriendList : ScrollRectList<FriendList_Item, SO_Account>
         item.OnClickDetailButton.AddListener((soData) => OnClickDetail.Invoke(soData));
         item.OnClickLikedToggle.AddListener((soData, isOn) => OnClickLikedToggle.Invoke(soData, isOn));
     }
-
-    protected override void ToClearList()
-    {
-    }
+  
 }

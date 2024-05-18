@@ -13,8 +13,14 @@ public abstract class ScrollRectList<T, SO> : MonoBehaviour where T : Component 
     [Header(">>> 列表項目組件(Prefab)")]
     [SerializeField] private T prefabItem;
 
-    [Header(">>> 垂直滑動列表 - 手動設定scrollRect對像")]
-    [SerializeField] protected ScrollRect scrollView;
+    [Header(">>> 列表容器")]
+    [SerializeField] private ScrollRect scrollRect;
+
+    [Header(">>> 顯示列表項目總數量")]
+    [SerializeField] private Text txtAmountOfDatas;
+
+    [Header(">>> 當列表項目被點擊時發送事件")]
+    public UnityEvent<SO> onItemClicked;
 
     /// <summary>
     /// 儲存外部傳來的ScriptateObject資料
@@ -23,17 +29,18 @@ public abstract class ScrollRectList<T, SO> : MonoBehaviour where T : Component 
 
     /// <summary>
     /// 以ScriptateObject資料，建置列表資料項T
-    /// <para>會先呼叫ToClearList()，以清空原先資料</para>
     /// </summary>
     public void SetDataList(List<SO> datas)
     {
-        ToClearList();
+        ToClearData();
 
         soDataList = datas;
+        if (txtAmountOfDatas != null) txtAmountOfDatas.text = soDataList.Count.ToString();
 
         for (int i = 0; i < soDataList.Count; i++)
         {
-            T item = Instantiate(prefabItem, scrollView.content);
+            T item = ObjectPoolManager.GetInstanceFromQueuePool<T>(prefabItem);
+            item.transform.SetParent(scrollRect.content);
             AddActionInSetDataListForLoop(item, soDataList[i]);
         }
     }
@@ -44,20 +51,43 @@ public abstract class ScrollRectList<T, SO> : MonoBehaviour where T : Component 
     /// </summary>
     protected abstract void AddActionInSetDataListForLoop(T item, SO soData);
 
-    /// <summary>
-    /// [abstract] 清空列表
-    /// </summary>
-    protected abstract void ToClearList();
+    public void DestroyAllChildren(Transform target)
+    {
+        foreach (Transform child in target)
+        {
+#if UNITY_EDITOR
+            DestroyImmediate(child);
+#else
+            Destroy(child);
+#endif
+        }
+    }
 
     /// <summary>
     /// 上移至頂部
     /// </summary>
-    public void ScrollToTop() => ToScroll(1f);
+    public void ScrollToTop() => scrollRect.verticalNormalizedPosition = 1f;
 
     /// <summary>
     /// 下移至底部
     /// </summary>
-    public void ScrollToBottom() => ToScroll(0f);
+    public void ScrollToBottom() => scrollRect.verticalNormalizedPosition = 0f;
 
-    private void ToScroll(float value) => scrollView.verticalNormalizedPosition = value;
+    /// <summary>
+    /// 清空資料
+    /// </summary>
+    public void ToClearData()
+    {
+        //移除原列表項目至物件池
+        ObjectPoolManager.PushToPool<T>(scrollRect.content);
+        OnClearData();
+    }
+    protected virtual void OnClearData() { }
+
+    private void OnValidate()
+    {
+        OnValidateAfter();
+    }
+
+    protected virtual void OnValidateAfter() { }
 }

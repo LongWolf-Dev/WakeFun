@@ -14,28 +14,8 @@ public class RankingList : ScrollRectList<RankingList_Item, SO_Account>
 
     protected override void AddActionInSetDataListForLoop(RankingList_Item item, SO_Account data)
     {
-        item.AccountSO = data;
+        item.achievementSO = data;
         item.OnClickDetailButton.AddListener((soData) => OnClickDetail.Invoke(soData));
         item.OnClickAddFriendButton.AddListener((soData) => OnClickAddFriend.Invoke(soData));
-    }
-
-    protected override void ToClearList()
-    {
-    }
-
-    /// <summary>
-    /// For Test
-    /// </summary>
-    private void Awake()
-    {
-        if(scrollView.content.childCount >= 0)
-        {
-            foreach (Transform child in scrollView.content.transform)
-            {
-                RankingList_Item item = child.GetComponent<RankingList_Item>();
-                item.OnClickDetailButton.AddListener((soData) => OnClickDetail.Invoke(soData));
-                item.OnClickAddFriendButton.AddListener((soData) => OnClickAddFriend.Invoke(soData));
-            }
-        }
     }
 }

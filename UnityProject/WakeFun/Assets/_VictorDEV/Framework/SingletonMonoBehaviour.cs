@@ -10,6 +10,8 @@ namespace VictorDev.Common
     {
         private static T instance { get; set; }
 
+        protected static string objName => $"[Singleton] - {typeof(T).Name}";
+
         protected static T Instance
         {
             get
@@ -21,7 +23,7 @@ namespace VictorDev.Common
                     {
                         GameObject obj = new GameObject();
                         instance = obj.AddComponent<T>();
-                        instance.name = $">>Dynamic<< {instance.GetType().Name}";
+                        instance.name = objName;
                     }
                 }
                 return instance;
@@ -29,6 +31,11 @@ namespace VictorDev.Common
         }
 
         private void Awake() => instance ??= this as T;
-        protected virtual void OnValidate() => name = $"[Singleton] - {typeof(T).Name}";
+        private void OnValidate()
+        {
+            name = objName;
+            OnValidateAfter();
+        }
+        protected virtual void OnValidateAfter() { }
     }
 }

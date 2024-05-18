@@ -7,9 +7,6 @@ public class AccountDetailPage : MonoBehaviour
 
     [Header(">>>大頭照")]
     [SerializeField] private Image imgAvatar;
-
-    [Header(">>>點讚數")]
-    [SerializeField] private Text txtLiked;
     [Header(">>>法號")]
     [SerializeField] private Text txtTitleName;
     [Header(">>>名稱")]
@@ -20,6 +17,13 @@ public class AccountDetailPage : MonoBehaviour
     [SerializeField] private Text txtAboutMe;
     [Header(">>>性別")]
     [SerializeField] private Text txtGender;
+
+    [Header(">>>點讚數")]
+    [SerializeField] private Text txtLiked;
+    [Header(">>>醒樂點")]
+    [SerializeField] private Text txtWakeFunPoint;
+
+
 
     public void SetAccountSoData(SO_Account soData)
     {
@@ -32,7 +36,6 @@ public class AccountDetailPage : MonoBehaviour
     private void OnValidate()
     {
         imgAvatar ??= transform.Find("大頭照").GetChild(1).GetChild(0).GetComponent<Image>();
-        txtLiked ??= transform.Find("讚icon").GetChild(0).GetComponent<Text>();
 
         Transform panel = transform.Find("Panel面板").transform;
         txtTitleName ??= panel.Find("法號").GetChild(0).GetComponent<Text>();

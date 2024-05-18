@@ -25,7 +25,7 @@ public class RankingList_Item : MonoBehaviour
     /// </summary>
     public UnityEvent<SO_Account> OnClickAddFriendButton;
 
-    public SO_Account AccountSO
+    public SO_Account achievementSO
     {
         set
         {
