@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6BCF\u65E5\u7DF4\u7FD2\u8005"
+  m_Text: "\u975C\u9ED8\u89C0\u5BDF"
 --- !u!1 &2898776502371248245
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 8097919509966218235}
   toggleTransition: 1
   graphic: {fileID: 1383148916365681726}
@@ -164,7 +164,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!1 &3593556687990534848
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +484,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u9023\u7E8C\u4E03\u5929\u6BCF\u5929\u51A5\u60F3\u3002"
+  m_Text: "\u5728\u51A5\u60F3\u4E2D\u975C\u9ED8\u89C0\u5BDF\u81EA\u5DF1\u7684\u601D\u60F3\u3002"
 --- !u!1 &7976273068666966037
 GameObject:
   m_ObjectHideFlags: 0

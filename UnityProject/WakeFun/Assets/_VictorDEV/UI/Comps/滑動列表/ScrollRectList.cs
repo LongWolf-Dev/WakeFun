@@ -27,6 +27,8 @@ public abstract class ScrollRectList<T, SO> : MonoBehaviour where T : Component 
     /// </summary>
     public List<SO> soDataList { get; private set; }
 
+    protected Transform scrollRectContainer => scrollRect.content;
+
     /// <summary>
     /// 以ScriptateObject資料，建置列表資料項T
     /// </summary>

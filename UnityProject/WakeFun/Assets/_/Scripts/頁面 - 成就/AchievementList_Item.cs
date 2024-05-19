@@ -40,14 +40,17 @@ public class AchievementList_Item : MonoBehaviour
     private void Awake()
     {
         btnDetail.onClick.AddListener(() => OnClickDetail.Invoke(achievementSO));
-        toggleIsHaveRewared.onValueChanged.AddListener((isOn) =>
+        if (toggleIsHaveRewared != null)
         {
-            if (isOn)
+            toggleIsHaveRewared.onValueChanged.AddListener((isOn) =>
             {
-                OnClickReceivedReward?.Invoke(achievementSO);
-                toggleIsHaveRewared.interactable = false;
-            }
-        });
+                if (isOn == false)
+                {
+                    OnClickReceivedReward?.Invoke(achievementSO);
+                    toggleIsHaveRewared.interactable = false;
+                }
+            });
+        }
     }
     private void OnValidate()
     {
@@ -58,25 +61,21 @@ public class AchievementList_Item : MonoBehaviour
 
     private void RefreshData()
     {
-        SO_Achievement data;
-        if (achievementSO != null) data = achievementSO;
-        else
+        if (achievementSO == null)
         {
-            SO_Achievement tempData = ScriptableObject.CreateInstance<SO_Achievement>();
-            tempData._SetupRandomData();
-            data = tempData;
+            achievementSO = ScriptableObject.CreateInstance<SO_Achievement>();
+            achievementSO._SetupRandomData();
         }
 
+        txtTitle.text = achievementSO.Title;
 
-        txtTitle.text = data.Title;
-
-        if (txtDescription != null) txtDescription.text = data.Description;
+        if (txtDescription != null) txtDescription.text = achievementSO.Description;
         if (toggleIsHaveRewared != null)
         {
-            toggleIsHaveRewared.isOn = data.IsHaveReward;
-            toggleIsHaveRewared.interactable = data.IsHaveReward;
+            toggleIsHaveRewared.isOn = achievementSO.IsHaveReward;
+            toggleIsHaveRewared.interactable = achievementSO.IsHaveReward;
         }
 
-        if (txtAchieveTimeStamp != null) txtAchieveTimeStamp.text = data.AchieveDateTime;
+        if (txtAchieveTimeStamp != null) txtAchieveTimeStamp.text = achievementSO.AchieveDateTime;
     }
 }
