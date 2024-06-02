@@ -3,16 +3,16 @@ using UnityEngine.UI;
 
 public class PageHandler_Friend : MonoBehaviour
 {
-    [Header(">>> ªğ¦^¶s")]
+    [Header(">>> è¿”å›éˆ•")]
     [SerializeField] private Button btnReturn;
 
-    [Header(">>> ±Æ¦æº]¦Cªí")]
+    [Header(">>> æ’è¡Œæ¦œåˆ—è¡¨")]
     [SerializeField] private RankingList rankingList;
-    [Header(">>> ¦n¤Í¦W³æ¦Cªí")]
+    [Header(">>> å¥½å‹åå–®åˆ—è¡¨")]
     [SerializeField] private FriendList friendList; 
-    [Header(">>> ·s¼W¦n¤Í­¶­±")]
+    [Header(">>> æ–°å¢å¥½å‹é é¢")]
     [SerializeField] private AddFriendHandler addFriendHandler;
-    [Header(">>> ±b¸¹¸Ô²Ó¸ê°T")]
+    [Header(">>> å¸³è™Ÿè©³ç´°è³‡è¨Š")]
     [SerializeField] private AccountDetailPage accountDetailPage;
 
     private void Awake()
@@ -24,10 +24,10 @@ public class PageHandler_Friend : MonoBehaviour
 
     private void OnValidate()
     {
-        btnReturn ??= transform.GetChild(0).Find("Buttonªğ¦^").GetComponent<Button>();
-        rankingList ??= transform.Find("±Æ¦æº]¦Cªí").GetComponent<RankingList>();
-        friendList ??= transform.Find("¦n¤Í¦W³æ¦Cªí").GetComponent<FriendList>();
-        addFriendHandler ??= transform.Find("·s¼W¦n¤Í­¶­±").GetComponent<AddFriendHandler>();
-        accountDetailPage ??= transform.Find("±b¸¹¸Ô²Ó¸ê°T").GetComponent<AccountDetailPage>();
+        btnReturn ??= transform.GetChild(0).Find("Buttonè¿”å›").GetComponent<Button>();
+        rankingList ??= transform.Find("æ’è¡Œæ¦œåˆ—è¡¨").GetComponent<RankingList>();
+        friendList ??= transform.Find("å¥½å‹åå–®åˆ—è¡¨").GetComponent<FriendList>();
+        addFriendHandler ??= transform.Find("æ–°å¢å¥½å‹é é¢").GetComponent<AddFriendHandler>();
+        accountDetailPage ??= transform.Find("å¸³è™Ÿè©³ç´°è³‡è¨Š").GetComponent<AccountDetailPage>();
     }
 }
