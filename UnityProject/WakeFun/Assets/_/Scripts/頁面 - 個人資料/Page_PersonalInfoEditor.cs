@@ -12,6 +12,7 @@ public class Page_PersonalInfoEditor : MonoBehaviour
     public UnityEvent<SO_Account> OnFinishEdit;
     private SO_Account editAccountData { get; set; }
 
+    #region [>>> UI組件設定]
     [Header(">>> UI組件 - 顯示頁面")]
     [SerializeField] private Button btnLineShare;
     [SerializeField] private Button btnLogout;
@@ -24,8 +25,9 @@ public class Page_PersonalInfoEditor : MonoBehaviour
     [SerializeField] private TMP_InputField inputTitleName;
     [SerializeField] private TMP_InputField inputUserName, inputAge;
     [SerializeField] private TMP_Dropdown dpGender;
-    [SerializeField] private TextMeshProUGUI inputAboutMe;
+    [SerializeField] private TMP_InputField inputAboutMe;
     [SerializeField] private Button btnSend;
+    #endregion
 
     public SO_Account AccountData
     {
@@ -34,6 +36,7 @@ public class Page_PersonalInfoEditor : MonoBehaviour
         {
             soAccountData = value;
             editAccountData = value;
+            RefreshUI();
         }
     }
 
@@ -44,6 +47,21 @@ public class Page_PersonalInfoEditor : MonoBehaviour
 
     private void OnClickSendButton()
     {
+        EnumGender gender = (dpGender.value == 0) ? EnumGender.女士 : EnumGender.男士;
+        editAccountData = new SO_Account(inputTitleName.text, inputUserName.text, int.Parse(inputAge.text), gender, inputAboutMe.text, soAccountData.WakeFunPoint, soAccountData.NumOfLiked);
+
         OnFinishEdit?.Invoke(editAccountData);
+    }
+
+    /// <summary>
+    /// 更新介面文字內容
+    /// </summary>
+    private void RefreshUI()
+    {
+        txtTitleName.text = inputTitleName.text = soAccountData.TitleName;
+        txtUserName.text = inputUserName.text = soAccountData.UserName;
+        txtAge.text = inputAge.text = soAccountData.Age.ToString();
+        txtGender.text = soAccountData.Gender.ToString();
+        dpGender.value = (soAccountData.Gender == EnumGender.女士) ? 0 : 1;
     }
 }

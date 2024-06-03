@@ -1,5 +1,5 @@
 ﻿public enum EnumGender
 {
-    男士, 女士
+    女士, 男士
 }
 
