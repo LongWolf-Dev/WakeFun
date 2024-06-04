@@ -14,6 +14,7 @@ public class Page_PersonalInfoEditor : MonoBehaviour
 
     #region [>>> UI組件設定]
     [Header(">>> UI組件 - 顯示頁面")]
+    [SerializeField] private Image imgAvatar;
     [SerializeField] private Button btnLineShare;
     [SerializeField] private Button btnLogout;
     [SerializeField] private TextMeshProUGUI txtWakefunPoint;
@@ -27,6 +28,7 @@ public class Page_PersonalInfoEditor : MonoBehaviour
     [SerializeField] private TMP_Dropdown dpGender;
     [SerializeField] private TMP_InputField inputAboutMe;
     [SerializeField] private Button btnSend;
+    [SerializeField] private Button btnChangeAvatar;
     #endregion
 
     public SO_Account AccountData
