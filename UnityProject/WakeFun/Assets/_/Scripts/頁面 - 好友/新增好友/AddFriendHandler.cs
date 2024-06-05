@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -11,10 +12,10 @@ public class AddFriendHandler : MonoBehaviour
     [SerializeField] private GameObject txtCantFindAccount;
 
     [Header(">>> 顯示好友名稱")]
-    [SerializeField] private Text txtFriendName;
+    [SerializeField] private TextMeshProUGUI txtFriendName;
 
     [Header(">>> 文字輸入框：搜尋ID")]
-    [SerializeField] private InputField inputFieldSearchID;
+    [SerializeField] private TMP_InputField inputFieldSearchID;
     [Header(">>> 新增友按鈕")]
     [SerializeField] private Button btnAddFriend;
     [Header(">>> 搜尋按鈕")]
@@ -69,9 +70,9 @@ public class AddFriendHandler : MonoBehaviour
     {
         Transform panel = transform.GetChild(1);
         txtCantFindAccount ??= panel.Find("Text找不到").gameObject;
-        txtFriendName ??= panel.Find("txt好友名稱").GetComponent<Text>();
+        txtFriendName ??= panel.Find("txt好友名稱").GetComponent<TextMeshProUGUI>();
         imgAvatar ??= panel.Find("大頭照外框").GetChild(0).GetChild(0).GetComponent<Image>();
-        inputFieldSearchID ??= panel.Find("InputField_好友名稱").GetComponent<InputField>();
+        inputFieldSearchID ??= panel.Find("InputField (TMP) 好友名稱").GetComponent<TMP_InputField>();
         btnAddFriend ??= panel.Find("Button新增").GetComponent<Button>();
         btnSearch ??= panel.Find("Button搜尋").GetComponent<Button>();
     }
