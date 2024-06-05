@@ -1,22 +1,26 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
 /// <summary>
-/// 列表組件Item - 成就
+/// 列表組件Item - 成就、歷史成就
 /// </summary>
 [RequireComponent(typeof(Button))]
 public class AchievementList_Item : MonoBehaviour
 {
-    [Header(">>> 列表組件Item - 成就")]
     [SerializeField] private SO_Achievement achievementSO;
 
+    [Header(">>> UI組件")]
     [SerializeField] private Button btnDetail;
-    [SerializeField] private Text txtTitle;
+    [SerializeField] private TextMeshProUGUI txtTitle;
 
+    [Header(">>> UI組件 - 成就")]
     [SerializeField] private Toggle toggleIsHaveRewared;
-    [SerializeField] private Text txtDescription;
-    [SerializeField] private Text txtAchieveTimeStamp;
+    [SerializeField] private TextMeshProUGUI txtDescription;
+
+    [Header(">>> UI組件 - 歷史成就")]
+    [SerializeField] private TextMeshProUGUI txtAchieveTimeStamp;
 
     /// <summary>
     /// 事件：點擊項目
@@ -55,7 +59,7 @@ public class AchievementList_Item : MonoBehaviour
     private void OnValidate()
     {
         btnDetail ??= GetComponent<Button>();
-        txtTitle ??= transform.Find("txt標題").GetComponent<Text>();
+        txtTitle ??= transform.Find("txt標題").GetComponent<TextMeshProUGUI>();
         RefreshData();
     }
 

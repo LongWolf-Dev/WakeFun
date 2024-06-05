@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -13,8 +14,8 @@ public class FriendList_Item : MonoBehaviour
 
     [SerializeField] private Button btnDetail;
     [SerializeField] private Toggle toggleLiked;
-    [SerializeField] private Text txtName;
-    [SerializeField] private Text txtNameTitle;
+    [SerializeField] private TextMeshProUGUI txtName;
+    [SerializeField] private TextMeshProUGUI txtNameTitle;
 
     /// <summary>
     /// 事件：點擊本體
@@ -49,8 +50,8 @@ public class FriendList_Item : MonoBehaviour
     {
         btnDetail ??= GetComponent<Button>();
         toggleLiked ??= transform.Find("Toggle讚").GetComponent<Toggle>();
-        txtName ??= transform.Find("姓名").GetComponent<Text>();
-        txtNameTitle ??= transform.Find("法號").GetComponent<Text>();
+        txtName ??= transform.Find("txt姓名").GetComponent<TextMeshProUGUI>();
+        txtNameTitle ??= transform.Find("txt法號").GetComponent<TextMeshProUGUI>();
         RefreshData();
     }
 
@@ -62,7 +63,6 @@ public class FriendList_Item : MonoBehaviour
             {
                 txtName.text = accountSO.UserName;
                 txtNameTitle.text = accountSO.TitleName;
-                name = $"{GetType().Name} - {accountSO.UserName}";
             }
         }
         else
@@ -71,9 +71,6 @@ public class FriendList_Item : MonoBehaviour
             tempData._SetupRandomData();
             txtName.text = tempData.UserName;
             txtNameTitle.text = tempData.TitleName;
-            name = $"{GetType().Name} - {tempData.UserName}";
-
-            Debug.LogWarning($"[Random Data] >>> {name}");
         }
     }
 }
