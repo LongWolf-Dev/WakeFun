@@ -12,6 +12,7 @@ public class FriendList_Item : MonoBehaviour
     [Header(">>> 列表組件Item - 好友名單")]
     [SerializeField] private SO_Account accountSO;
 
+    [Header(">>> UI組件")]
     [SerializeField] private Button btnDetail;
     [SerializeField] private Toggle toggleLiked;
     [SerializeField] private TextMeshProUGUI txtName;
