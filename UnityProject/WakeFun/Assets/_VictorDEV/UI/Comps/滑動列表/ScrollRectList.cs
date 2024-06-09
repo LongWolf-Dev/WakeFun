@@ -29,6 +29,8 @@ public abstract class ScrollRectList<T, SO> : MonoBehaviour where T : Component 
 
     protected Transform scrollRectContainer => scrollRect.content;
 
+    protected virtual void OnEnable() => ScrollToTop();
+
     /// <summary>
     /// 以ScriptateObject資料，建置列表資料項T
     /// </summary>

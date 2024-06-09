@@ -38,7 +38,7 @@ public class Page_Article : ScrollRectList<ArticleList_Item, SO_Article>
     }
 
     /// <summary>
-    /// 當點擊文章項目時，向WebAPI取得資料
+    /// 當點擊文章項目時，向WebAPI取得章節資料
     /// </summary>
     private void OnClickDetail(SO_Article articleData)
     {
