@@ -8,10 +8,6 @@ public class Page_Course : ScrollRectList<CourseList_Item, SO_Course>
     [Header(">>> 聯絡醒樂LINE   ")]
     [SerializeField] private Button btnContectLine;
 
-    private void Awake()
-    {
-    }
-
     protected override void AddActionInSetDataListForLoop(CourseList_Item item, SO_Course soData)
     {
         item.soCourseData = soData;

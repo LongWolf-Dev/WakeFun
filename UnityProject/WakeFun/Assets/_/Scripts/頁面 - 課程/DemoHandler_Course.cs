@@ -9,7 +9,10 @@ public class DemoHandler_Course : MonoBehaviour
     [SerializeField] private int numOfData = 15;
     [SerializeField] private Page_Course pageCourse;
 
-    private void Start()
+    private void Start() => CreateData();
+
+    [ContextMenu("- Create Data")]
+    private void CreateData()
     {
         List<SO_Course> courseList = new List<SO_Course>();
 

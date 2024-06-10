@@ -45,6 +45,7 @@ public abstract class ScrollRectList<T, SO> : MonoBehaviour where T : Component 
         {
             T item = ObjectPoolManager.GetInstanceFromQueuePool<T>(prefabItem);
             item.transform.SetParent(scrollRect.content);
+            item.transform.localScale = Vector3.one;
             AddActionInSetDataListForLoop(item, soDataList[i]);
         }
     }
