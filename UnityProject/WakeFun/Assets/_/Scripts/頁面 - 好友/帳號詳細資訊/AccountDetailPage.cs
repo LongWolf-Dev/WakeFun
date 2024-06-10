@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,20 +9,20 @@ public class AccountDetailPage : MonoBehaviour
     [Header(">>>大頭照")]
     [SerializeField] private Image imgAvatar;
     [Header(">>>法號")]
-    [SerializeField] private Text txtTitleName;
+    [SerializeField] private TextMeshProUGUI txtTitleName;
     [Header(">>>名稱")]
-    [SerializeField] private Text txtUserName;
+    [SerializeField] private TextMeshProUGUI txtUserName;
     [Header(">>>年齡")]
-    [SerializeField] private Text txtAge;
+    [SerializeField] private TextMeshProUGUI txtAge;
     [Header(">>>關於我")]
-    [SerializeField] private Text txtAboutMe;
+    [SerializeField] private TextMeshProUGUI txtAboutMe;
     [Header(">>>性別")]
-    [SerializeField] private Text txtGender;
+    [SerializeField] private TextMeshProUGUI txtGender;
 
     [Header(">>>點讚數")]
-    [SerializeField] private Text txtLiked;
+    [SerializeField] private TextMeshProUGUI txtLiked;
     [Header(">>>醒樂點")]
-    [SerializeField] private Text txtWakeFunPoint;
+    [SerializeField] private TextMeshProUGUI txtWakeFunPoint;
 
 
 
@@ -38,11 +39,11 @@ public class AccountDetailPage : MonoBehaviour
         imgAvatar ??= transform.Find("大頭照").GetChild(1).GetChild(0).GetComponent<Image>();
 
         Transform panel = transform.Find("Panel面板").transform;
-        txtTitleName ??= panel.Find("法號").GetChild(0).GetComponent<Text>();
-        txtUserName ??= panel.Find("名稱").GetChild(0).GetComponent<Text>();
-        txtAge ??= panel.Find("年齡").GetChild(0).GetComponent<Text>();
-        txtAboutMe ??= panel.Find("關於我").GetChild(0).GetChild(0).GetComponent<Text>();
-        txtGender ??= panel.Find("txt性別").GetComponent<Text>();
+        txtTitleName ??= panel.Find("法號").GetChild(0).GetComponent<TextMeshProUGUI>();
+        txtUserName ??= panel.Find("名稱").GetChild(0).GetComponent<TextMeshProUGUI>();
+        txtAge ??= panel.Find("年齡").GetChild(0).GetComponent<TextMeshProUGUI>();
+        txtAboutMe ??= panel.Find("關於我").GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
+        txtGender ??= panel.Find("txt性別").GetComponent<TextMeshProUGUI>();
     }
 
     private void RefreshData()

@@ -20,8 +20,8 @@ public class Page_Friend : MonoBehaviour
 
     private void Awake()
     {
-        rankingList.OnClickDetail.AddListener(accountDetailPage.SetAccountSoData);
-        friendList.OnClickDetail.AddListener(accountDetailPage.SetAccountSoData);
+        rankingList.onItemClicked.AddListener(accountDetailPage.SetAccountSoData);
+        friendList.onItemClicked.AddListener(accountDetailPage.SetAccountSoData);
         addFriendHandler.OnClickAvatarEvent.AddListener(accountDetailPage.SetAccountSoData);
     }
 

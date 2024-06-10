@@ -46,8 +46,9 @@ public class AddFriendHandler : MonoBehaviour
     private void Awake()
     {
         txtCantFindAccount.SetActive(false);
-        btnSearch.onClick.AddListener(()=> OnSearchIDEvent.Invoke(inputFieldSearchID.text, this));
-        btnAvatar.onClick.AddListener(() => OnClickAvatarEvent.Invoke(AccountSoDataBySearch)) ;
+        inputFieldSearchID.onSubmit.AddListener((inputString) => OnSearchIDEvent.Invoke(inputString, this));
+        btnSearch.onClick.AddListener(() => OnSearchIDEvent.Invoke(inputFieldSearchID.text, this));
+        btnAvatar.onClick.AddListener(() => OnClickAvatarEvent.Invoke(AccountSoDataBySearch));
         btnAddFriend.onClick.AddListener(() => OnAddFriendEvent.Invoke(accountSoDataBySearch));
     }
 
